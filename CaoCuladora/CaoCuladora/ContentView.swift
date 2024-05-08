@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var years: Int? = nil
-    @State var months: Int? = nil
+    @State var years: Int?
+    @State var months: Int?
+    
+    @State var result: Int?
     
     var body: some View {
         VStack(alignment: .leading) {
             Text("Qual a idade do seu cachorro?")
+                .font(.system(size: 24))
             
             Text("Anos")
             TextField(
@@ -27,6 +30,33 @@ struct ContentView: View {
                 value: $years,
                 format: .number
             )
+            
+            Text("Porte")
+            // segmented control
+            
+            if let result {
+                Text("Seu Cachorro tem, em idade canina...")
+                Text("\(result) anos")
+            } else {
+                Image(ImageResource.clarinha)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity, maxHeight: 150)
+                    .shadow(radius: 20)
+            }
+            
+            Button(action: {
+                result = 23
+            }, label: {
+                ZStack{
+                    Color.indigo
+                    Text("CãoCular")
+                        .foregroundStyle(.white)
+                }
+            })
+            .cornerRadius(10)
+            .frame(height: 50)
+            
         }
         .textFieldStyle(.roundedBorder)
         .keyboardType(.numberPad)
