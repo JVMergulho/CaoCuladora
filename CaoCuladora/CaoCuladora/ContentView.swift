@@ -10,8 +10,10 @@ import SwiftUI
 struct ContentView: View {
     @State var years: Int?
     @State var months: Int?
-    
     @State var result: Int?
+    @State var porte: String = "Pequeno"
+    
+    let portes = ["Pequeno", "Médio", "Grande"]
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -27,12 +29,23 @@ struct ContentView: View {
             Text("Meses")
             TextField(
                 "E quantos meses além disso ele tem?",
-                value: $years,
+                value: $months,
                 format: .number
             )
             
             Text("Porte")
             // segmented control
+            Picker("Porte", selection: $porte) {
+                ForEach(portes, id: \.self){ porte in
+                    Text("\(porte)")
+                }
+            }
+            .pickerStyle(.segmented)
+            
+            Divider()
+                .background(.indigo)
+            
+            Spacer()
             
             if let result {
                 Text("Seu Cachorro tem, em idade canina...")
@@ -45,9 +58,9 @@ struct ContentView: View {
                     .shadow(radius: 20)
             }
             
-            Button(action: {
-                result = 23
-            }, label: {
+            Spacer()
+            
+            Button(action: calculateAge, label: {
                 ZStack{
                     Color.indigo
                     Text("CãoCular")
@@ -56,13 +69,25 @@ struct ContentView: View {
             })
             .cornerRadius(10)
             .frame(height: 50)
-            
         }
         .textFieldStyle(.roundedBorder)
         .keyboardType(.numberPad)
         .bold()
         .fontDesign(.rounded)
         .padding()
+    }
+    
+    func calculateAge(){
+        guard let years, let months else{
+            print("preencha os campo de entrada")
+            return
+        }
+        guard years > 0 || months > 0 else{
+            print("algum campo tem que ter valor maior que zero")
+            return
+        }
+        
+        result = years * 7 + (months*7)/12
     }
 }
 
