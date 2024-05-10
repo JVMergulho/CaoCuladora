@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8151E46C2BEE9DB900B7F0A8 /* sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151E46B2BEE9DB900B7F0A8 /* sizes.swift */; };
+		8151E46E2BEEAFE000B7F0A8 /* styleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151E46D2BEEAFE000B7F0A8 /* styleGuide.swift */; };
 		8179E6882BEAB1780088B7E2 /* CaoCuladoraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179E6872BEAB1780088B7E2 /* CaoCuladoraApp.swift */; };
 		8179E68A2BEAB1780088B7E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179E6892BEAB1780088B7E2 /* ContentView.swift */; };
 		8179E68C2BEAB1790088B7E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8179E68B2BEAB1790088B7E2 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8151E46B2BEE9DB900B7F0A8 /* sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sizes.swift; sourceTree = "<group>"; };
+		8151E46D2BEEAFE000B7F0A8 /* styleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = styleGuide.swift; sourceTree = "<group>"; };
 		8179E6842BEAB1780088B7E2 /* CaoCuladora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaoCuladora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8179E6872BEAB1780088B7E2 /* CaoCuladoraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaoCuladoraApp.swift; sourceTree = "<group>"; };
 		8179E6892BEAB1780088B7E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			children = (
 				8179E6872BEAB1780088B7E2 /* CaoCuladoraApp.swift */,
 				8179E6892BEAB1780088B7E2 /* ContentView.swift */,
+				8151E46D2BEEAFE000B7F0A8 /* styleGuide.swift */,
+				8151E46B2BEE9DB900B7F0A8 /* sizes.swift */,
 				8179E68B2BEAB1790088B7E2 /* Assets.xcassets */,
 				8179E68D2BEAB1790088B7E2 /* Preview Content */,
 			);
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8151E46C2BEE9DB900B7F0A8 /* sizes.swift in Sources */,
 				8179E68A2BEAB1780088B7E2 /* ContentView.swift in Sources */,
+				8151E46E2BEEAFE000B7F0A8 /* styleGuide.swift in Sources */,
 				8179E6882BEAB1780088B7E2 /* CaoCuladoraApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

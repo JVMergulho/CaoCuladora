@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @State var years: Int?
     @State var months: Int?
     @State var result: Int?
-    @State var porte: String = "Pequeno"
-    
-    let portes = ["Pequeno", "Médio", "Grande"]
-    
+    @State var dogSize: Size = .small
+                    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Qual a idade do seu cachorro?")
@@ -35,9 +34,10 @@ struct ContentView: View {
             
             Text("Porte")
             // segmented control
-            Picker("Porte", selection: $porte) {
-                ForEach(portes, id: \.self){ porte in
-                    Text("\(porte)")
+            Picker("Porte", selection: $dogSize) {
+                ForEach(Size.allCases, id: \.self){ size in
+                    Text("\(size.rawValue.capitalized)")
+                        .tag(size)
                 }
             }
             .pickerStyle(.segmented)
@@ -50,6 +50,7 @@ struct ContentView: View {
             if let result {
                 Text("Seu Cachorro tem, em idade canina...")
                 Text("\(result) anos")
+                    .font(.display)
             } else {
                 Image(ImageResource.clarinha)
                     .resizable()
@@ -87,7 +88,7 @@ struct ContentView: View {
             return
         }
         
-        result = years * 7 + (months*7)/12
+        result = dogSize.convertAge(years: years, months: months)
     }
 }
 
